@@ -8,6 +8,8 @@ void evaluarMenu1(int opcion1);
 int obtenerNumeroMenu1();
 
 int main() {
+    int numero = obtenerNumeroMenu1();
+    evaluarMenu1(numero);
     menuPrincipal();
     return 0;
 }
@@ -17,7 +19,7 @@ int main() {
 
 int obtenerNumeroMenu1(){
     int numero;
-    cout << "Ingresa un número: ";
+    cout << "Ingresa un numero: ";
     cin >> numero;
 
     return numero;
@@ -28,21 +30,30 @@ int obtenerNumeroMenu1(){
     se usan para diferentes cosas, impresion de textos*/
 
 void evaluarMenu1(int opcion1){
-    if (opcion1 >= 1 && opcion1 <= 4)
+    if (opcion1 >= 1 && opcion1 <= 3)
     {
         cout << "Opcion Valida, en seguida tienes tu respuesta" << endl;
         
     }        
     else
         {
-            cout << "Opcion Invalida, por favor introduce una opcion valida :D";
+            if (opcion1 == 4){
+
+                cout << "Gracias por usar el programa." << endl;
+        
+            } 
+            else{
+                
+                cout << "Opcion Invalida, por favor introduce una opcion valida :D";
+
+            }
+            
         }
     
 }
 
 void menuPrincipal(){
-    int Op;
-    bool Repetir = true;
+    int opcion;
 
     do
     {
@@ -54,10 +65,10 @@ void menuPrincipal(){
         cout <<"\n\t3. Menu De Calculo De cacular un perimetro" << endl;
         cout <<"\n\t4. Salir del programa" << endl;
 
-        cout <<"\nIngrese Una Opcion del medio ambieente" << endl;
-        cin >> Op;
-
-        switch (Op) {
+        cout <<"\nIngrese Una Opcion del menu" << endl;
+        cin >> opcion;
+        evaluarMenu1(opcion);
+        switch (opcion) {
             case 1:
                 cout <<"No puedo Marta" << endl;
                 break;
@@ -68,10 +79,10 @@ void menuPrincipal(){
                 cout <<"No puedo Marta" << endl;
                 break;
             case 4:
-                Repetir = false;
+                cout <<"No puedo Marta" << endl;
                 break;
         }
 
-    } while (Repetir);
+    } while (opcion != 0);
     
 }
