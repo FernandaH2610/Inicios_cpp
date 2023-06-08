@@ -4,8 +4,22 @@
 using namespace std;
 
 void menuPrincipal();
-void evaluarMenu1(int opcion1);
+
+//Menus secundarios
+void menuVolumen();
+void menuPerimetro();
+void menuArea();
+
+//Extas
+void adios();
+void vacio();
+
+//Modulo para obtener la variable del menu 1
 int obtener1();
+
+//Modulo para obtener la variable del menu 2
+int obtener2();
+
 
 int main() {
     menuPrincipal();
@@ -26,15 +40,22 @@ int obtener1(){
     return opcion1;
 }
 
+int obtener2(){
+    int opcion2;
+    cout << "Ingrese la opcion que desea ejecutar: \n";
+    cin >> opcion2;
+    return opcion2;
+}
+
 
 void menuPrincipal(){
 
         system("cls");
         cout <<"\n\n\t\t\t\t Menu Principal" << endl;
         cout <<"\t\t\t---------------------" << endl;
-        cout <<"\n\t1. Menu De Calculo De Volumene De Un Cuerpo" << endl;
-        cout <<"\n\t2. Menu De Calculo De Un Perimetro" << endl;
-        cout <<"\n\t3. Menu De Calculo De cacular un perimetro" << endl;
+        cout <<"\n\t1. Calculo del volumen" << endl;
+        cout <<"\n\t2. Calculo del perimetro" << endl;
+        cout <<"\n\t3. Calculo del area" << endl;
         cout <<"\n\t4. Salir del programa" << endl;
         
         /*REFERENCIA
@@ -50,23 +71,27 @@ void menuPrincipal(){
     {
         switch (opcion) {
             case 1:
-                cout <<"No puedo Marta" << endl;
+                menuVolumen();
                 break;
             case 2:
-                cout <<"No puedo Marta" << endl;
+                menuPerimetro();
                 break;
             case 3:
-                cout <<"No puedo Marta" << endl;
+                menuArea();
                 break;
             case 4:
-                cout <<"No puedo Marta" << endl;
+                adios();
                 break;
+            default:
+                vacio();
+                break;
+
         }
 
         /*VALIDACIONES
-            Es para que el valor que acciones el do - while,
-            entre en las opciones,  que hemos designado para
-            como validas, de lo contrario, se buguea.*/
+            Es para que el valor que accione en el do-while
+            este  entre las   opciones  que hemos designado
+            como validas,  de lo contrario, se buguea.*/
 
     } while (opcion <= 1 && opcion >= 4);
     
