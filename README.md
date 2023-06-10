@@ -10,3 +10,7 @@ Suerte con tus futuros codigos <3
 
 Holis, Hoy subi un nuevo codigo, esta en construccion el codigo, asi que aun no funciona bien del todo.
 
+06/09/2023
+
+Holii, bitacora del dia, ya funciona el menu y añadimos unos cuantos modulos
+
