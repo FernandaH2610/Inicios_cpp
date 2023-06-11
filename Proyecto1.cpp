@@ -3,6 +3,50 @@
 
 using namespace std;
 
+void menuPrincipal();
+int obtener1();
+int obtener2();
+void menuVolumen();
+double obtenerVolumenEsfera();
+double obtenerVolumenCono();
+double obtenerVolumenCilindro();
+void volumenCubo();
+void volumenEsfera();
+double obtenerVolumenCono();
+double obtenerVolumenCilindro();
+void volumenCubo();
+void volumenEsfera();
+void volumenCono();
+void volumenCilindro();
+void menuPerimetro();
+int obtenerPerimetroCuadrado();
+double obtenerPerimetroCircunferencia();
+int obtenerPerimetroRectangulo();
+int obtenerPerimetroTringulo();
+void perimetroCuadrado();
+void perimetroCircunferencia();
+void perimetroRectangulo();
+void perimetroTriangulo();
+void menuArea();
+void areaTriangulo();
+void areaCirculo();
+void areaRectangulo();
+void areaCuadrado();
+double obtenerAreaTriangulo();
+double obtenerAreaCirculo();
+double obtenerAreaRectangulo();
+double obtenerAreaCuadrado();
+double obtenerAreaCuadrado();
+void adios();
+void vacio();
+
+int main() {
+    menuPrincipal();
+    return 0;
+}
+
+
+
 void menuPrincipal(){
 
         system("cls");
@@ -414,13 +458,4 @@ void adios(){
 
 void vacio(){
     cout << "Elije una opcion valida por favor";
-}
-
-void menuArea(){
-    cout << "No puedo Marta";
-}
-
-int main() {
-    menuPrincipal();
-    return 0;
 }
