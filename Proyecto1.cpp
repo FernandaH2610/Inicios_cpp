@@ -4,7 +4,7 @@
 using namespace std;
 
 void menuPrincipal();
-int obtener1();
+int obtener1(); //Sirve como variable
 int obtener2();
 void menuVolumen();
 double obtenerVolumenEsfera();
@@ -39,6 +39,7 @@ double obtenerAreaCuadrado();
 double obtenerAreaCuadrado();
 void adios();
 void vacio();
+void limpiar();
 
 int main() {
     menuPrincipal();
@@ -46,66 +47,56 @@ int main() {
 }
 
 
-
 void menuPrincipal(){
 
-        system("cls");
-        cout <<"\n\n\t\t\t\t Menu Principal" << endl;
-        cout <<"\t\t\t---------------------" << endl;
-        cout <<"\n\t1. Calculo del volumen" << endl;
-        cout <<"\n\t2. Calculo del perimetro" << endl;
-        cout <<"\n\t3. Calculo del area" << endl;
-        cout <<"\n\t4. Salir del programa" << endl;
-        
-        /*REFERENCIA
-            Esto sirve para que un modulo tenga un formato de variable,
-            tambien para que sea mas facil el usarlo  en procesos, como
-            lo estamos haciendo, en este ejemplo, la variable "opcion",
-            es un tipo de dato numerico y nos sirve para  darle el uso 
-            que queremos al activar el do-while y el activar los casos
-            de nuestro switch.*/
-
-        int opcion = obtener1();
+        int opcion;
     do
     {
+        system("cls");
+        cout <<"\t\t\t\tMenu Principal" << endl;
+        cout <<"\t\t\t----------------------------" << endl;
+        cout <<"\t1. Calculo del volumen" << endl << endl;
+        cout <<"\t2. Calculo del perimetro" << endl << endl;
+        cout <<"\t3. Calculo del area" << endl << endl;
+        cout <<"\t4. Salir del programa" << endl << endl;
+        opcion = obtener1();
         switch (opcion) {
             case 1:
                 menuVolumen();
+                limpiar();
                 break;
             case 2:
                 menuPerimetro();
+                limpiar();
                 break;
             case 3:
                 menuArea();
+                limpiar();
                 break;
             case 4:
                 adios();
+                limpiar();
                 break;
             default:
                 vacio();
+                limpiar();
                 break;
 
         }
 
-        /*VALIDACIONES
-            Es para que el valor que accione en el do-while
-            este  entre las   opciones  que hemos designado
-            como validas,  de lo contrario, se buguea.*/
-
-    } while (opcion <= 1 && opcion >= 4);
-    
+    } while (opcion != 4);
 }
 
 //Obtener Opciones de menus
 int obtener1(){
     int opcion1;
-    cout << "Ingrese la opcion que desea ejecutar: \n";
+    cout << "Ingrese la opcion que desea ejecutar: " << endl;
     cin >> opcion1;
     return opcion1;
 }
 int obtener2(){
     int opcion2;
-    cout << "Ingrese la opcion que desea ejecutar: \n";
+    cout << "Ingrese la opcion que desea ejecutar:" << endl;
     cin >> opcion2;
     return opcion2;
 }
@@ -113,44 +104,50 @@ int obtener2(){
 
 //VOLUMEN
 void menuVolumen(){
-        
-        system("cls");
-        cout <<"\n\n\t\t\t\t CALCULO DEL VOLUMEN" << endl;
-        cout <<"\t\t\t---------------------" << endl;
-        cout <<"\n\t1. Calculo del volumen de un cubo" << endl;  //Done
-        cout <<"\n\t2. Calculo del volumen de una esfera " << endl;
-        cout <<"\n\t3. Calculo del volumen de un cono" << endl;
-        cout <<"\n\t4. Calculo del volumen de un cilindro" << endl;
-        cout <<"\n\t5. Salir del programa" << endl;
 
-        int opcion = obtener2();
+        int opcion;
+        
     do
     {
+        system("cls");
+        cout <<"\t\t\t\t CALCULO DEL VOLUMEN" << endl;
+        cout <<"\t\t\t--------------------------------------" << endl;
+        cout <<"\t1. Calculo del volumen de un cubo" << endl << endl;  //Done
+        cout <<"\t2. Calculo del volumen de una esfera " << endl << endl;
+        cout <<"\t3. Calculo del volumen de un cono" << endl << endl;
+        cout <<"\t4. Calculo del volumen de un cilindro" << endl << endl;
+        cout <<"\t5. Salir al menu principal" << endl << endl;
+        opcion = obtener2();
+
         switch (opcion) {
             case 1:
                 volumenCubo();
+                limpiar();
                 break;
             case 2:
                 volumenEsfera();
+                limpiar();
                 break;
             case 3:
                 volumenCono();
+                limpiar();
                 break;
             case 4:
                 volumenCilindro();
+                limpiar();
+                break;
+            case 5: 
+                adios();
+                limpiar();
                 break;
             default:
                 vacio();
+                limpiar();
                 break;
 
         }
-
-        /*VALIDACIONES
-            Es para que el valor que accione en el do-while
-            este  entre las   opciones  que hemos designado
-            como validas,  de lo contrario, se buguea.*/
-
-    } while (opcion <= 1 && opcion >= 4);
+    }
+    while (opcion != 5);
             
 }
 
@@ -172,6 +169,7 @@ int obtenerVolumenCubo(){
 
     return vCubo;
 }
+
 double obtenerVolumenEsfera(){
     int radio;
     double vEsfera;
@@ -214,56 +212,67 @@ double obtenerVolumenCilindro(){
 void volumenCubo(){
 
     int vCubo = obtenerVolumenCubo();
-    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << vCubo;
+    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << vCubo << endl;
 }
+
 void volumenEsfera(){
     int vEsfera = obtenerVolumenEsfera();
-    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << vEsfera;
+    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << vEsfera << endl;
 }
 void volumenCono(){
     int vCono = obtenerVolumenCono();
-    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << vCono;
+    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << vCono << endl;
 }
 void volumenCilindro(){
     int vCilindro = obtenerVolumenCilindro();
-    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << vCilindro;
+    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << vCilindro << endl;
 }
 
 //PERIMETRO
 void menuPerimetro(){
         
-        system("cls");
-        cout <<"\n\n\t\t\t\t CALCULO DEL PERIMETRO" << endl;
-        cout <<"\t\t\t---------------------" << endl;
-        cout <<"\n\t1. Calculo del perimetro de un cuadrado" << endl;  //Done
-        cout <<"\n\t2. Calculo del perimetro de una circunsferencia " << endl;
-        cout <<"\n\t3. Calculo del perimetro de un rectangulo" << endl;
-        cout <<"\n\t4. Calculo del perimetro de un triangulo" << endl;
-        cout <<"\n\t5. Salir del programa" << endl;
 
-        int opcion = obtener2();
+        int opcion;
     do
     {
+        system("cls");
+        cout <<"\t\t\t\t CALCULO DEL PERIMETRO" << endl;
+        cout <<"\t\t\t------------------------------------------" << endl;
+        cout <<"\t1. Calculo del perimetro de un cuadrado" << endl << endl;  //Done
+        cout <<"\t2. Calculo del perimetro de una circunsferencia " << endl << endl;
+        cout <<"\t3. Calculo del perimetro de un rectangulo" << endl << endl;
+        cout <<"\t4. Calculo del perimetro de un triangulo" << endl << endl;
+        cout <<"\t5. Salir al menu principal" << endl << endl;
+        opcion = obtener2();
         switch (opcion) {
             case 1:
                 perimetroCuadrado();
+                limpiar();
                 break;
             case 2:
                 perimetroCircunferencia();
+                limpiar();
                 break;
             case 3:
                 perimetroRectangulo();
+                limpiar();
                 break;
             case 4:
                 perimetroTriangulo();
+                limpiar();
+                break;
+            case 5:
+                adios();
+                limpiar();
                 break;
             default:
                 vacio();
+                limpiar();
                 break;
 
         }
 
-    } while (opcion <= 1 && opcion >= 4);
+    } while (opcion != 5);
             
 }
 
@@ -331,19 +340,19 @@ int obtenerPerimetroTringulo(){
 
 void perimetroCuadrado(){
     int pCuadrado = obtenerPerimetroCuadrado();
-    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << pCuadrado;
+    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << pCuadrado << endl;
 }
 void perimetroCircunferencia(){
     int pCircunferencia = obtenerPerimetroCircunferencia();
-    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << pCircunferencia;
+    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << pCircunferencia << endl;
 }
 void perimetroRectangulo(){
     int pRectangulo = obtenerPerimetroRectangulo();
-    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << pRectangulo;
+    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << pRectangulo << endl;
 }
 void perimetroTriangulo(){
     int pTriangulo = obtenerPerimetroTringulo();
-    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << pTriangulo;
+    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << pTriangulo << endl;
 
 }
 
@@ -351,56 +360,65 @@ void perimetroTriangulo(){
 
 void menuArea(){
         
-        system("cls");
-        cout <<"\n\n\t\t\t\t CALCULO DEL PERIMETRO" << endl;
-        cout <<"\t\t\t---------------------" << endl;
-        cout <<"\n\t1. Calculo del area de un cuadrado" << endl;  //Done
-        cout <<"\n\t2. Calculo del area de un circulo " << endl;
-        cout <<"\n\t3. Calculo del area de un rectangulo" << endl;
-        cout <<"\n\t4. Calculo del area de un triangulo" << endl;
-        cout <<"\n\t5. Salir del programa" << endl;
 
-        int opcion = obtener2();
+        int opcion;
     do
     {
+        system("cls");
+        cout <<"\t\t\t\t CALCULO DEL AREA" << endl;
+        cout <<"\t\t\t--------------------------------" << endl;
+        cout <<"\t1. Calculo del area de un cuadrado" << endl << endl;  //Done
+        cout <<"\t2. Calculo del area de un circulo " << endl << endl;
+        cout <<"\t3. Calculo del area de un rectangulo" << endl << endl;
+        cout <<"\t4. Calculo del area de un triangulo" << endl << endl;
+        cout <<"\t5. Salir al menu principal" << endl << endl;
+        opcion = obtener2();
         switch (opcion) {
             case 1:
                 areaCuadrado();
+                limpiar();
                 break;
             case 2:
                 areaCirculo();
+                limpiar();
                 break;
             case 3:
                 areaRectangulo();
+                limpiar();
                 break;
             case 4:
                 areaTriangulo();
+                limpiar();
+                break;
+            case 5:
+                adios();
+                limpiar();
                 break;
             default:
                 vacio();
+                limpiar();
                 break;
-
         }
 
-    } while (opcion <= 1 && opcion >= 4);
+    } while (opcion != 5);
             
 }
 
 void areaTriangulo(){
     int aTriangulo = obtenerAreaTriangulo();
-    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << aTriangulo;
+    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << aTriangulo << endl;
 }
 void areaCirculo(){
     int aCirculo = obtenerAreaCirculo();
-    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << aCirculo;
+    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << aCirculo << endl;
 }
 void areaRectangulo(){
     int aRectangulo = obtenerAreaRectangulo();
-    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << aRectangulo;
+    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << aRectangulo << endl;
 }
 void areaCuadrado(){
     int aCuadrado = obtenerAreaCuadrado();
-    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << aCuadrado;
+    cout << "Con gusto te brindo la informacion que necesitas, de momento, la respuesta es la siguiente :   " << aCuadrado << endl;
 }
 
 double obtenerAreaTriangulo(){
@@ -428,20 +446,6 @@ double obtenerAreaCirculo(){
 double obtenerAreaRectangulo(){
     int ladoA;
     int ladoB;
-    int aCuadrado;
-
-    cout << "Ingresa el valor del lado a" << endl;
-    cin >> ladoA;
-    cout << "Ingresa el valor del lado b" << endl;
-    cin >> ladoB;
-    aCuadrado = (ladoA * ladoB);
-
-
-    return aCuadrado;
-}
-double obtenerAreaCuadrado(){
-    int ladoA;
-    int ladoB;
     int aRectangulo;
 
     cout << "Ingresa el valor del lado a" << endl;
@@ -449,7 +453,18 @@ double obtenerAreaCuadrado(){
     cout << "Ingresa el valor del lado b" << endl;
     cin >> ladoB;
     aRectangulo = (ladoA * ladoB);
+
+
     return aRectangulo;
+}
+double obtenerAreaCuadrado(){
+    int ladoA;
+    int aCuadrado;
+
+    cout << "Ingresa el valor del lado a" << endl;
+    cin >> ladoA;
+    aCuadrado = (ladoA * ladoA);
+    return aCuadrado;
 }
 
 void adios(){
@@ -458,4 +473,13 @@ void adios(){
 
 void vacio(){
     cout << "Elije una opcion valida por favor";
+}
+
+void limpiar(){
+
+	system("pause");
+	cout << "Presiona Enter para continuar...";
+	system("cls");
+	getchar();
+
 }
